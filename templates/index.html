@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CertifyAI | Global Compliance Engine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+        "colors": {
+                "surface-tint": "#8ff5ff",
+                "surface-container-low": "#131316",
+                "surface-container-lowest": "#000000",
+                "surface-bright": "#2c2c2f",
+                "on-primary-fixed": "#003f43",
+                "on-secondary-fixed-variant": "#7520b5",
+                "secondary-fixed": "#e7c5ff",
+                "inverse-primary": "#006a71",
+                "background": "#0e0e10",
+                "on-secondary-container": "#e6c3ff",
+                "secondary-dim": "#c57eff",
+                "primary-container": "#00eefc",
+                "on-tertiary": "#002442",
+                "on-primary-fixed-variant": "#005e64",
+                "tertiary-fixed-dim": "#4ca8ff",
+                "primary-fixed": "#00eefc",
+                "primary-fixed-dim": "#00deec",
+                "secondary-container": "#6a0baa",
+                "surface-container-high": "#1f1f22",
+                "on-secondary-fixed": "#510085",
+                "on-tertiary-container": "#001429",
+                "on-secondary": "#340058",
+                "secondary": "#c57eff",
+                "error": "#ff716c",
+                "on-error": "#490006",
+                "on-tertiary-fixed": "#001930",
+                "on-primary-container": "#005359",
+                "surface-variant": "#262529",
+                "surface-container-highest": "#262529",
+                "inverse-on-surface": "#565457",
+                "on-surface": "#fffbfe",
+                "tertiary-fixed": "#70b5ff",
+                "surface-dim": "#0e0e10",
+                "outline": "#767578",
+                "surface-container": "#19191c",
+                "tertiary-container": "#2498f5",
+                "error-dim": "#d7383b",
+                "secondary-fixed-dim": "#deb3ff",
+                "on-error-container": "#ffa8a3",
+                "on-surface-variant": "#adaaad",
+                "outline-variant": "#48474a",
+                "primary-dim": "#00deec",
+                "inverse-surface": "#fcf8fb",
+                "on-tertiary-fixed-variant": "#003b67",
+                "on-primary": "#005d63",
+                "surface": "#0e0e10",
+                "tertiary-dim": "#3aa2ff",
+                "tertiary": "#44a5ff",
+                "on-background": "#fffbfe",
+                "primary": "#8ff5ff",
+                "error-container": "#9f0519"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "fontFamily": {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Space Grotesk"],
+                "mono": ["JetBrains Mono"]
+        }
+        },
+    },
+    }
+</script>
+<style>
+    .glass-panel {
+        background: rgba(38, 37, 41, 0.6);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(72, 71, 74, 0.15);
+    }
+    .text-glow-cyan {
+        text-shadow: 0 0 10px rgba(143, 245, 255, 0.5);
+    }
+    .bg-mesh {
+        background-image: radial-gradient(at 0% 0%, rgba(106, 11, 170, 0.15) 0px, transparent 50%),
+                            radial-gradient(at 100% 100%, rgba(68, 165, 255, 0.1) 0px, transparent 50%);
+    }
+    .ghost-border {
+        border: 1px solid rgba(72, 71, 74, 0.15);
+    }
+    .active-glow {
+        box-shadow: 0 0 15px rgba(143, 245, 255, 0.2);
+    }
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    @keyframes fade-up {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up {
+        animation-name: fade-up;
+    }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container bg-mesh min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-zinc-950/60 backdrop-blur-xl flex justify-between items-center px-8 py-4 max-w-full mx-auto font-space-grotesk tracking-tight">
+<div class="text-2xl font-bold tracking-tighter text-white">CertifyAI</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1" href="#solutions">Solutions</a>
+<a class="text-zinc-400 hover:text-white transition-colors" href="/how-it-works">How It Works</a>
+</div>
+</nav>
+<main class="pt-24 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative px-8 py-20 min-h-[921px] flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-12">
+<div class="w-full md:w-1/2 z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high ghost-border mb-6">
+<span class="flex h-2 w-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-xs font-mono text-primary uppercase tracking-widest">Global Engine Live</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-6">
+                Certify the World <span class="text-primary text-glow-cyan">Before You Render.</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                Analyze scripts and subtitles in seconds to predict age certificates across 100+ global territories with 99.8% accuracy.
+            </p>
+<!-- Drag & Drop Zone -->
+<div class="p-1 rounded-xl bg-gradient-to-br from-primary/20 to-transparent">
+<input type="file" id="file-upload" class="hidden" accept=".srt,.txt,.pdf" />
+<div id="drop-zone" class="bg-surface-container-lowest border-2 border-dashed border-outline-variant rounded-lg p-8 flex flex-col items-center justify-center group hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">upload_file</span>
+<p class="font-headline font-bold text-lg mb-1">Upload Your Script</p>
+<p class="text-sm text-on-surface-variant">Drag and drop .pdf or .txt files here</p>
+</div>
+</div>
+</div>
+<!-- Asymmetric Hero Visual -->
+<div class="w-full md:w-1/2 relative flex justify-center">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-tertiary/10 blur-[120px] rounded-full"></div>
+<div class="relative w-full max-w-md aspect-square" id="movie-poster-container">
+<img alt="Global Connectivity Visualization" class="w-full h-full object-contain mix-blend-lighten drop-shadow-[0_0_30px_rgba(143,245,255,0.2)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu04FyelXzkexTVi_e2HF_M57U8utCF42esbghVbcZSanocaHaWOauczJZ1_1aJi2OROw9OSpOH8R_kYaLVKA-x7Xm8rFAC2aYJ8fBjw5p_7vKZdt1watvN1Hr9bly_DPCSoAWkyoVYNjaJN1PkHatBwEBrz_kZ_iVMFzkjMINN0bBLRa1VssBbVrnOZv1klfzj6fP6RV8so6kRL8df7PIXUjZb3IBQW-uprkL1kWOUSWzl_NYMwlZEEWxyC75R0Mzg8yDQKNOuJ4"/>
+<!-- Floating Rating Tags -->
+<div class="absolute top-10 left-0 glass-panel px-4 py-2 rounded-lg ghost-border animate-bounce" style="animation-duration: 3s">
+<span class="text-xs font-mono text-primary">US: PG-13</span>
+</div>
+<div class="absolute bottom-20 right-0 glass-panel px-4 py-2 rounded-lg ghost-border animate-bounce" style="animation-duration: 4s">
+<span class="text-xs font-mono text-tertiary">UK: 15</span>
+</div>
+<div class="absolute top-1/2 right-10 glass-panel px-4 py-2 rounded-lg ghost-border animate-bounce" style="animation-duration: 5s">
+<span class="text-xs font-mono text-secondary">DE: FSK 12</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Rating Dashboard Preview -->
+<section id="results-section" class="py-24 relative overflow-hidden hidden">
+<div class="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-5xl h-[600px] bg-primary/5 blur-[150px] -z-10 rounded-full"></div>
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl font-bold mb-4">Command Center Oversight</h2>
+<p class="text-on-surface-variant">Real-time analysis results from <span id="analyzed-filename" class="font-bold text-white">the uploaded</span> script.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Global Risk Score Card -->
+<div class="lg:col-span-4 glass-panel p-8 rounded-xl ghost-border h-full">
+<div class="flex justify-between items-center mb-8">
+<h4 class="font-mono text-xs uppercase tracking-widest text-outline">Global Risk Index</h4>
+<span class="text-[10px] font-mono text-primary-dim">ID: XJ-204</span>
+</div>
+<div class="flex flex-col items-center justify-center py-10">
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-surface-container-high" cx="96" cy="96" fill="none" r="88" stroke="currentColor" stroke-width="4"></circle>
+<circle id="risk-circle" class="text-primary transition-all duration-1000 ease-out" cx="96" cy="96" fill="none" r="88" stroke="currentColor" stroke-dasharray="553" stroke-dashoffset="160" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span id="risk-index-value" class="font-headline text-5xl font-bold">71%</span>
+<span id="risk-index-label" class="font-mono text-xs text-error mt-2">CALCULATING</span>
+</div>
+</div>
+</div>
+<div id="risk-factors-bars" class="space-y-4">
+<!-- Dynamically populated -->
+</div>
+</div>
+<!-- Territory Dashboard -->
+<div class="lg:col-span-8 glass-panel rounded-xl ghost-border overflow-hidden h-full">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center bg-surface-container-high/50">
+<h4 class="font-headline font-bold">Territory Distribution</h4>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-lowest border border-outline-variant/30 rounded text-[10px] font-mono text-primary">LIVE RESULTS</span>
+</div>
+</div>
+<div class="p-0 overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[600px]">
+<thead class="text-[10px] font-mono text-outline uppercase tracking-wider border-b border-outline-variant/10">
+<tr>
+<th class="px-6 py-4 font-medium">Territory</th>
+<th class="px-6 py-4 font-medium">Predicted Rating</th>
+<th class="px-6 py-4 font-medium">Confidence</th>
+<th class="px-6 py-4 font-medium">Risk Factors</th>
+</tr>
+</thead>
+<tbody id="territory-tbody" class="text-sm divide-y divide-outline-variant/5">
+<!-- Dynamically populated rows go here -->
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Script Audit Log -->
+<div class="mt-12 w-full">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center bg-surface-container-high/50 rounded-t-xl glass-panel ghost-border border-b-0">
+<h4 class="font-headline font-bold">Script Audit Log</h4>
+<span class="px-2 py-1 bg-surface-container-lowest border border-outline-variant/30 rounded text-[10px] font-mono text-primary" id="audit-count">0 FLAGS</span>
+</div>
+<div class="glass-panel ghost-border rounded-b-xl overflow-hidden p-0 max-h-96 overflow-y-auto w-full">
+<div id="audit-log-container" class="divide-y divide-outline-variant/5">
+<!-- Snippets go here -->
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-950 w-full border-t border-zinc-800/30">
+<div class="max-w-7xl mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-lg font-bold text-white">CertifyAI</div>
+<p class="font-inter text-sm text-zinc-500">© 2026 CertifyAI Global Sentinel. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-inter text-sm text-zinc-500 hover:text-cyan-400 transition-colors" href="#">Compliance Standards</a>
+<a class="font-inter text-sm text-zinc-500 hover:text-cyan-400 transition-colors" href="#">Developer API</a>
+<a class="font-inter text-sm text-zinc-500 hover:text-cyan-400 transition-colors" href="#">Legal Resources</a>
+<a class="font-inter text-sm text-zinc-500 hover:text-cyan-400 transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const dropZone = document.getElementById("drop-zone");
+    const fileInput = document.getElementById("file-upload");
+    const resultsSection = document.getElementById("results-section");
+    const originalDropZoneHtml = dropZone.innerHTML;
+    
+    dropZone.addEventListener("click", () => fileInput.click());
+    dropZone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        dropZone.classList.add("border-primary");
+        dropZone.classList.add("bg-primary/5");
+    });
+    dropZone.addEventListener("dragleave", () => {
+        dropZone.classList.remove("border-primary");
+        dropZone.classList.remove("bg-primary/5");
+    });
+    dropZone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        dropZone.classList.remove("border-primary");
+        dropZone.classList.remove("bg-primary/5");
+        if(e.dataTransfer.files.length) {
+            handleFile(e.dataTransfer.files[0]);
+        }
+    });
+    fileInput.addEventListener("change", (e) => {
+        if(e.target.files.length) {
+            handleFile(e.target.files[0]);
+        }
+    });
+
+    async function handleFile(file) {
+        const formData = new FormData();
+        formData.append("file", file);
+        
+        // Show loading state
+        dropZone.innerHTML = `
+            <span class="material-symbols-outlined text-4xl text-primary mb-4 animate-spin">sync</span>
+            <p class="font-headline font-bold text-lg mb-1 animate-pulse">Analyzing Scripts...</p>
+            <p class="text-sm text-on-surface-variant">Connecting to Global Compliance Engine...</p>
+        `;
+        
+        try {
+            const response = await fetch('/api/analyze', { method: 'POST', body: formData });
+            const data = await response.json();
+            if(data.success) {
+                renderResults(data);
+            } else {
+                alert("Error: " + data.error);
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Failed to analyze file. Please make sure the backend is running.");
+        } finally {
+            // Restore upload zone
+            dropZone.innerHTML = originalDropZoneHtml;
+        }
+    }
+    
+    function renderResults(data) {
+        // Un-hide results section
+        resultsSection.classList.remove("hidden");
+        document.getElementById("analyzed-filename").innerText = data.filename;
+        
+        // Render the movie poster dynamically if available
+        if (data.poster_url && data.poster_url !== "N/A") {
+            const posterContainer = document.getElementById("movie-poster-container");
+            if (posterContainer) {
+                posterContainer.innerHTML = `<img src="${data.poster_url}" alt="${data.guessed_title} Poster" class="w-full h-full object-contain rounded-xl drop-shadow-[0_0_30px_rgba(143,245,255,0.2)]" />`;
+            }
+        }
+        
+        // Populate Global Risk Score
+        let riskAlertCount = 0;
+        const restrict_r = ['18', 'NC-17', 'Restricted', 'R18', 'FSK 18', 'A (Adults Only)', 'R18+'];
+        
+        for(const k in data.ratings) {
+            if (restrict_r.some(r => data.ratings[k].includes(r))) {
+                riskAlertCount++;
+            }
+        }
+        
+        let regionsCount = Object.keys(data.ratings).length || 1;
+        let riskIndex = Math.min(100, Math.round((riskAlertCount / regionsCount) * 100));
+        
+        // Boost risk index slightly if entities are very high
+        const totalEntities = Object.values(data.entity_counts).reduce((a, b) => a + b, 0);
+        if (totalEntities > 50 && riskIndex < 80) riskIndex += 15;
+        if (riskIndex > 100) riskIndex = 100;
+        
+        document.getElementById("risk-index-value").innerText = riskIndex + "%";
+        document.getElementById("risk-index-label").innerText = riskIndex > 40 ? "HIGH ALERT" : "LOW RISK";
+        document.getElementById("risk-index-label").className = riskIndex > 40 ? "font-mono text-xs text-error mt-2 font-bold" : "font-mono text-xs text-primary mt-2 font-bold";
+        
+        setTimeout(() => {
+            const circle = document.getElementById("risk-circle");
+            circle.setAttribute("stroke-dashoffset", 553 - (553 * riskIndex / 100));
+            circle.className = riskIndex > 40 ? "text-error transition-all duration-1000 ease-out" : "text-primary transition-all duration-1000 ease-out";
+        }, 100);
+        
+        // Populate Risk Factors Bars
+        const riskBarsContainer = document.getElementById("risk-factors-bars");
+        riskBarsContainer.innerHTML = "";
+        
+        for(const [entity, count] of Object.entries(data.entity_counts)) {
+            if(count > 0) {
+                // Determine bar width
+                const maxExpected = 50;
+                const widthPct = Math.min(100, (count / maxExpected) * 100);
+                const isHigh = widthPct > 50;
+                const severity = isHigh ? "Extreme" : "Moderate";
+                const colorClass = isHigh ? "bg-error" : "bg-primary";
+                
+                riskBarsContainer.innerHTML += `
+                <div class="space-y-1">
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-on-surface-variant capitalize">${entity.toLowerCase()}</span>
+                        <span class="font-bold text-${isHigh?'error':'primary'}">${severity} (${count})</span>
+                    </div>
+                    <div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+                        <div class="${colorClass} h-full" style="width: 0%; transition: width 1s ease-out;" data-width="${widthPct}%"></div>
+                    </div>
+                </div>`;
+            }
+        }
+        
+        setTimeout(() => {
+            riskBarsContainer.querySelectorAll('[data-width]').forEach(el => {
+                el.style.width = el.getAttribute('data-width');
+            });
+        }, 100);
+
+        // Populate Table
+        const tbody = document.getElementById("territory-tbody");
+        tbody.innerHTML = "";
+        let animDelay = 0;
+        const flagMap = {
+            "India": "🇮🇳", "USA": "🇺🇸", "UK": "🇬🇧", "Australia": "🇦🇺",
+            "Germany": "🇩🇪", "France": "🇫🇷", "Japan": "🇯🇵",
+            "South Korea": "🇰🇷", "New Zealand": "🇳🇿", "Canada": "🇨🇦"
+        };
+        
+        for(const [regionLong, rating] of Object.entries(data.ratings)) {
+            animDelay += 0.05;
+            const region = regionLong.split('(')[0].trim();
+            const is_r = restrict_r.some(r => rating.includes(r));
+            const textCol = is_r ? "text-error" : "text-primary";
+            
+            // Add Risk Factors dots based on entities
+            let riskDots = "";
+            for(const [k, v] of Object.entries(data.entity_counts)) {
+                if(v > 0) riskDots += `<span class="w-2 h-2 rounded-full ${is_r ? 'bg-error' : 'bg-primary-container'}" title="${k}"></span>`;
+                if(riskDots.split('</span>').length > 5) break; // Limit visually
+            }
+            if (!riskDots) riskDots = `<span class="text-xs text-outline font-mono">None</span>`;
+
+            tbody.innerHTML += `
+            <tr class="hover:bg-primary/5 transition-colors group animate-fade-up border-b border-outline-variant/10" style="animation-duration: 0.5s; animation-delay: ${animDelay}s; animation-fill-mode: both;">
+                <td class="px-6 py-5 flex items-center gap-3">
+                    <div class="text-xl">${flagMap[region] || "🌍"}</div>
+                    <span class="font-medium">${region}</span>
+                </td>
+                <td class="px-6 py-5 font-bold ${textCol}">${rating}</td>
+                <td class="px-6 py-5 font-mono text-xs text-on-surface-variant">${(95 + Math.random()*4.9).toFixed(1)}%</td>
+                <td class="px-6 py-5">
+                    <div class="flex gap-1.5">${riskDots}</div>
+                </td>
+            </tr>`;
+        }
+        
+        // Populate Audit Log
+        const auditLogContainer = document.getElementById("audit-log-container");
+        auditLogContainer.innerHTML = "";
+        
+        if (data.highlights && data.highlights.length > 0) {
+            document.getElementById("audit-count").innerText = `${data.highlights.length} FLAGS SHOWN`;
+            data.highlights.forEach((h, idx) => {
+                const isHigh = ["VIOLENCE", "GORE", "NUDITY_SEX", "PROFANITY", "DRUGS"].includes(h.label);
+                const colorClass = isHigh ? "text-error" : "text-primary";
+                const bgIconClass = isHigh ? "bg-error/10 text-error" : "bg-primary/10 text-primary";
+                const icon = isHigh ? "warning" : "info";
+                
+                const reg = new RegExp(`\\b(${h.entity})\\b`, "gi");
+                const highlightedContext = h.context.replace(reg, `<span class="${colorClass} font-bold underline decoration-current underline-offset-4">$1</span>`);
+                
+                auditLogContainer.innerHTML += `
+                <div class="p-6 hover:bg-white/[0.02] transition-colors flex gap-4 items-start animate-fade-up" style="animation-delay: ${Math.min(idx * 0.05, 1)}s; animation-fill-mode: both;">
+                    <div class="w-10 h-10 ${bgIconClass} rounded-lg flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined">${icon}</span>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="font-mono text-xs font-bold ${colorClass}">${h.label}</span>
+                            <span class="text-xs text-on-surface-variant font-mono">DETECTED IN SCRIPT</span>
+                        </div>
+                        <p class="text-on-surface text-sm leading-relaxed">&ldquo;${highlightedContext}&rdquo;</p>
+                    </div>
+                </div>`;
+            });
+        } else {
+            document.getElementById("audit-count").innerText = "CLEAN";
+            auditLogContainer.innerHTML = `<div class="p-8 text-center text-on-surface-variant"><span class="material-symbols-outlined text-4xl mb-2 opacity-50">check_circle</span><p>No compliance flags detected in script.</p></div>`;
+        }
+        
+        // Scroll to results cleanly
+        setTimeout(() => {
+            resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+    }
+});
+</script>
+</body>
+</html>

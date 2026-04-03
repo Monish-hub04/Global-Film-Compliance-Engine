@@ -1,0 +1,7 @@
+spacy
+flask
+werkzeug
+requests
+pysrt
+plotly>=5.14.0
+pandas>=2.0.0

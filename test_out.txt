@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\MONISH SVCE\NLP_PROJECT\test_backend.py", line 8, in <module>
+    doc, counts = extract_compliance_entities(text)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\HP\Desktop\MONISH SVCE\NLP_PROJECT\src\nlp_engine.py", line 69, in extract_compliance_entities
+    nlp = load_nlp_pipeline()
+  File "C:\Users\HP\Desktop\MONISH SVCE\NLP_PROJECT\src\nlp_engine.py", line 7, in load_nlp_pipeline
+    nlp = spacy.load("en_core_web_sm")
+          ^^^^^
+UnboundLocalError: cannot access local variable 'spacy' where it is not associated with a value

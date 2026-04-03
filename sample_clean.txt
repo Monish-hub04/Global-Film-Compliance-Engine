@@ -1,0 +1,16 @@
+SCENE START
+
+INT. CLASSROOM - DAY
+
+The teacher smiles at the students. 
+
+TEACHER
+Welcome class. Today we will learn about history.
+
+STUDENT
+I love history! It is so fun.
+
+TEACHER
+That is wonderful to hear. 
+
+SCENE END

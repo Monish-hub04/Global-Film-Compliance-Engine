@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>How It Works | CertifyAI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+        "colors": {
+                "surface-tint": "#8ff5ff",
+                "surface-container-low": "#131316",
+                "surface-container-lowest": "#000000",
+                "primary": "#8ff5ff",
+                "background": "#0e0e10",
+                "on-surface": "#fffbfe",
+                "on-surface-variant": "#adaaad",
+        },
+        "fontFamily": {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "mono": ["JetBrains Mono"]
+        }
+        },
+    },
+    }
+</script>
+<style>
+    .glass-panel { background: rgba(38, 37, 41, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(72, 71, 74, 0.15); }
+    .bg-mesh { background-image: radial-gradient(at 0% 0%, rgba(106, 11, 170, 0.15) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(68, 165, 255, 0.1) 0px, transparent 50%); }
+    .text-glow-cyan { text-shadow: 0 0 10px rgba(143, 245, 255, 0.5); }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body bg-mesh min-h-screen flex flex-col">
+<nav class="w-full z-50 bg-zinc-950/60 backdrop-blur-xl flex justify-between items-center px-8 py-4 max-w-full mx-auto font-space-grotesk tracking-tight border-b border-zinc-800/30">
+<a href="/" class="text-2xl font-bold tracking-tighter text-white">CertifyAI</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-zinc-400 hover:text-white transition-colors" href="/#solutions">Solutions</a>
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1" href="/how-it-works">How It Works</a>
+</div>
+</nav>
+
+<main class="flex-grow max-w-4xl mx-auto px-8 py-20">
+    <h1 class="font-headline text-4xl md:text-5xl font-bold mb-12">How it <span class="text-primary text-glow-cyan">Works</span></h1>
+    
+    <div class="space-y-12 text-on-surface-variant leading-relaxed">
+        <div class="glass-panel p-8 rounded-xl transition-all hover:border-primary/50">
+            <h2 class="text-2xl font-bold text-white mb-4">1. Document Parsing</h2>
+            <p>We accept <code>.srt</code> subtitle files and plain <code>.txt</code> scripts. Our pipeline extracts spoken dialogue and scene cues, stripping out away timestamps and HTML tags using the <code>pysrt</code> library, giving us a clean corpus of text to analyze seamlessly.</p>
+        </div>
+        
+        <div class="glass-panel p-8 rounded-xl transition-all hover:border-primary/50">
+            <h2 class="text-2xl font-bold text-white mb-4">2. Named Entity Recognition (NER)</h2>
+            <p>The text is fed into a custom spaCy NLP pipeline that has been specifically fine-tuned and populated with custom matchers to identify key compliance entities: Profanity, Violence, Gore, Drugs, and Nudity descriptors. The frequency of these terms directly informs the final rating system.</p>
+        </div>
+        
+        <div class="glass-panel p-8 rounded-xl transition-all hover:border-primary/50">
+            <h2 class="text-2xl font-bold text-white mb-4">3. Region-Specific Compliance Check</h2>
+            <p>Using CBFC-style guidelines from around the world (India, USA, UK, Australia, etc.), our rules engine evaluates the entity counts. A high score of explicit language might trigger an "R" rating in the US but a "15" in the UK. The global map translates raw entity data into accurate local certifications automatically.</p>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-zinc-950 w-full border-t border-zinc-800/30 mt-auto">
+<div class="max-w-7xl mx-auto px-8 py-8 flex items-center justify-between">
+    <div class="flex flex-col md:flex-row items-center gap-4">
+        <div class="text-lg font-bold text-white">CertifyAI</div>
+        <p class="text-sm text-zinc-500">© 2026 CertifyAI Global Sentinel. All rights reserved.</p>
+    </div>
+    <div class="hidden md:flex gap-8">
+        <a class="font-inter text-sm text-zinc-500 hover:text-cyan-400 transition-colors" href="#">Compliance Standards</a>
+        <a class="font-inter text-sm text-zinc-500 hover:text-cyan-400 transition-colors" href="#">Developer API</a>
+    </div>
+</div>
+</footer>
+</body>
+</html>

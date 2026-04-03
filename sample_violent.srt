@@ -1,0 +1,15 @@
+1
+00:00:01,000 --> 00:00:04,000
+I am going to kill you!
+
+2
+00:00:05,000 --> 00:00:08,000
+He grabs a knife and tries to stab him.
+
+3
+00:00:09,000 --> 00:00:12,000
+But he manages to punch him instead.
+
+4
+00:00:13,000 --> 00:00:15,000
+I will shoot! Drop the weapon!
